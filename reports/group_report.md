@@ -130,4 +130,4 @@
 - [ ] Đúng 1 lệnh run, 1 lệnh evaluate, 1 lệnh tests; không cần download khi chạy.
 - [ ] Có baseline/PoC metrics, ≥1 failure case, reviewer evidence, decision log.
 - [ ] Có license/source provenance, data splits, seed, offline environment, GT/eval N.
-- [ ] Cập nhật Git author/email, tạo commit thực chất và ghi SHA minh bạch trong bảng trên.
+- [x] Cập nhật Git author/email, tạo commit thực chất và ghi SHA minh bạch trong bảng trên.

@@ -29,9 +29,9 @@ Người trình bày: Nguyễn Anh Thư. Thời lượng gợi ý: 5–7 phút. 
 
 ## Slide 5 — Kết quả và việc còn lại
 
-- Baseline chạy 0.4806 giây; PoC chạy 1.1405 giây trên 96 ảnh (Windows 11, Python 3.12.2; lần chạy gần nhất).
+- Baseline chạy 0.3876 giây; PoC chạy 1.1409 giây trên 96 ảnh (Windows 11, Python 3.12.2; theo `run_info.json` mới nhất, SHA `7e865e2`).
 - Preflight: 0 lỗi; manifest: 14/14 hợp lệ; test suite kết thúc exit code 0, một số test cần GT được skip.
-- Chưa có metric chính thức do thiếu GT. Cần cập nhật email Git, xác nhận Git URL, hoàn thiện references, commit/tag theo mốc thực tế.
+- Không có metric chính thức do repo học viên không chứa GT; không tự tạo nhãn để tính Recall@20/Precision@20. Email Git, references và tag local đã được ghi nhận; trước khi nộp cần xác nhận đúng remote nộp bài và trình bày demo trực tiếp.
 
 ## Demo live checklist
 

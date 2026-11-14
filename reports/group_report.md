@@ -11,7 +11,7 @@
 | Group ID | G04 |
 | Challenge | T02 · Raw QC Triage |
 | Thành viên + vai trò | Nguyễn Anh Thư (MSSV 2A202603084) — Lead, người trình bày và thành viên duy nhất; tự thực hiện toàn bộ tác vụ |
-| Git URL | Chưa xác nhận đây là remote nộp bài của nhóm; cần xác nhận/cập nhật |
+| Git URL | Chưa xác nhận remote hiện tại có phải nơi nộp bài của nhóm hay không |
 | Tag `demo-180m` (commit) | `demo-180m` → implementation freeze `f0850bf` |
 | Tag `final-24h` (commit) | `final-24h` → annotated final tag (target ghi nhận bằng Git ref) |
 | Deadline (giờ VN) | Đúng hạn (chưa có ngày/giờ cụ thể) |
@@ -45,8 +45,8 @@
 
 ## 04 · Baseline vs PoC
 
-- Baseline (mô tả, version/config, commit): `src.examples.laplacian_baseline`; score = âm Laplacian variance toàn ảnh; B=20, seed=42, offline. Run thành công trên cùng 96 ảnh. Runtime 0.4806 giây; SHA lúc chạy `b0ce8bf` (working tree khi chạy chưa commit).
-- PoC (mô tả, version/config, commit): `src.pipeline`; robust anomaly scores theo camera/light cho blur, dark, local glare và JPEG blockiness; weights 1.0/0.8/0.9/0.6, recapture threshold 2.0. B=20, seed=42, offline. Run thành công; runtime 1.1405 giây; 96 ảnh, queue 20; SHA lúc chạy `b0ce8bf` (working tree khi chạy chưa commit).
+- Baseline (mô tả, version/config, commit): `src.examples.laplacian_baseline`; score = âm Laplacian variance toàn ảnh; B=20, seed=42, offline. Run thành công trên cùng 96 ảnh. Runtime lần chạy mới nhất 0.3876 giây; `run_info.json` ghi SHA `7e865e2`.
+- PoC (mô tả, version/config, commit): `src.pipeline`; robust anomaly scores theo camera/light cho blur, dark, local glare và JPEG blockiness; weights 1.0/0.8/0.9/0.6, recapture threshold 2.0. B=20, seed=42, offline. Run thành công; runtime lần chạy mới nhất 1.1409 giây; 96 ảnh, queue 20; `run_info.json` ghi SHA `7e865e2`.
 - Cùng budget / cùng heldout / cùng seed: baseline và PoC dùng cùng fixture, seed 42, offline, budget 20. So sánh metric chính thức chưa thể lập vì ground truth/evaluator input chưa được cung cấp.
 
 **Bảng 1 · Baseline vs PoC & hard slices** — dán output của
@@ -57,7 +57,7 @@
 | Primary: Defect Recall@20 | Chưa có GT | Chưa có GT | Chưa tính; không suy diễn nhãn |
 | Hard-slice: theo light/defect | Chưa có GT | Chưa có GT | Cần evaluator/GT giảng viên |
 | Review@20 / miss / FP | Chưa có GT | Chưa có GT | B=20 |
-| Runtime / 100 items | 0.5006 giây | 1.1880 giây | Run time chia theo 96 ảnh rồi nhân 100; Windows 11, Python 3.12.2 |
+| Runtime / 100 items | 0.4038 giây | 1.1884 giây | Lần chạy mới nhất: runtime chia theo 96 ảnh rồi nhân 100; Windows 11, Python 3.12.2 |
 
 ## 05 · Evaluation protocol
 
@@ -76,7 +76,7 @@
 
 - Failure case 1 (ảnh/metadata + root cause): `img_17_2` có lóa lớn ở vùng giữa, làm giảm tương phản đường và nền; được đánh dấu RECAPTURE trong review hiện có.
 - Failure case 2: `img_13_3`, `img_17_3`, `img_23_3` bị mờ/tối nặng theo quan sát hình; `img_18_2` là ví dụ cảnh đêm tương đối rõ nhưng bị xếp vào queue, thể hiện nguy cơ false alarm do ánh sáng theo cảnh. Đây là đánh giá định tính, chưa xác nhận bằng GT.
-- Latency / compute (máy, CPU, ms/item): Windows 11, Python 3.12.2, AMD64 Family 23 Model 96 Stepping 1; baseline 5.01 ms/ảnh, PoC 11.88 ms/ảnh (runtime tổng/96, lần chạy gần nhất).
+- Latency / compute (máy, CPU, ms/item): Windows 11, Python 3.12.2, AMD64 Family 23 Model 96 Stepping 1; baseline 4.04 ms/ảnh, PoC 11.88 ms/ảnh (runtime tổng/96, lần chạy mới nhất).
 
 ## 07 · Human & decision
 
@@ -97,7 +97,7 @@
 
 - Output của `pytest -q`: pass (exit code 0); một số kiểm thử cần GT được skip.
 - `python -m tools.preflight`: 0 FAIL, 2 WARN (gói `data/real` và model tùy chọn không có; không cần cho T02 synthetic offline). `python -m tools.verify_manifests`: 14 manifests, 0 lỗi.
-- Máy / CPU / OS / Python: Windows 11 · AMD64 Family 23 Model 96 Stepping 1 · Python 3.12.2 · git sha lúc chạy `b0ce8bf`; thay đổi hiện tại chưa commit.
+- Máy / CPU / OS / Python: Windows 11 · AMD64 Family 23 Model 96 Stepping 1 · Python 3.12.2 · SHA ghi trong `run_info.json`: `7e865e2`.
 
 ## 09 · Limitations & ethics
 

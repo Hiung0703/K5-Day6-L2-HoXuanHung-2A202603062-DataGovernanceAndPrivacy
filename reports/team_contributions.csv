@@ -1,2 +1,2 @@
 member,git_author_name,git_email,role,modules_files,commit_shas,evidence_note,presenter
-Nguyễn Anh Thư,Nguyễn Anh Thư,26ai.thuna@vinuni.edu.vn,Lead / sole group member,"src/pipeline.py; configs/lab.yaml; tests/; reports/; demo/",PENDING,"Mã sinh viên: 2A202603084. Nhóm xác nhận Nguyễn Anh Thư là thành viên duy nhất và thực hiện toàn bộ phần việc; có hỗ trợ AI khi triển khai/reporting.",Yes
+Nguyễn Anh Thư,Nguyễn Anh Thư,26ai.thuna@vinuni.edu.vn,Lead / sole group member,"src/pipeline.py; configs/lab.yaml; tests/; reports/; demo/",f0850bf,"Mã sinh viên: 2A202603084. Nhóm xác nhận Nguyễn Anh Thư là thành viên duy nhất và thực hiện toàn bộ phần việc; có hỗ trợ AI khi triển khai/reporting.",Yes

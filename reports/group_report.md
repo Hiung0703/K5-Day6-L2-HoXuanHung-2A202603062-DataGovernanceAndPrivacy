@@ -112,7 +112,7 @@
 
 | Học viên | Git author/email | Module / vai trò | Commit SHA / diff chứng minh | Trình bày? |
 |---|---|---|---|---|
-| Nguyễn Anh Thư (2A202603084) | 26ai.thuna@vinuni.edu.vn | Lead; thành viên duy nhất | Commit SHA sẽ cập nhật sau khi chốt thay đổi; có hỗ trợ AI khi triển khai/reporting | Có |
+| Nguyễn Anh Thư (2A202603084) | 26ai.thuna@vinuni.edu.vn | Lead; thành viên duy nhất | Implementation commit `f0850bf`; có hỗ trợ AI khi triển khai/reporting | Có |
 
 ## 11 · References
 

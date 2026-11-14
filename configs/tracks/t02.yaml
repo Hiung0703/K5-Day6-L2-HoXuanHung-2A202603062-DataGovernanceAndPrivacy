@@ -6,6 +6,12 @@ pred_file: ranked_review.csv
 params:
   budget: 20
   dev_split: dev
+  recapture_score_threshold: 2.0
+  feature_weights:
+    blur_score: 1.0
+    dark_score: 0.8
+    glare_score: 0.9
+    compression_score: 0.6
 eval_params:
   budget: 20
   split: eval

@@ -12,8 +12,8 @@
 | Challenge | T02 · Raw QC Triage |
 | Thành viên + vai trò | Nguyễn Anh Thư (MSSV 2A202603084) — Lead, người trình bày và thành viên duy nhất; tự thực hiện toàn bộ tác vụ |
 | Git URL | Chưa xác nhận đây là remote nộp bài của nhóm; cần xác nhận/cập nhật |
-| Tag `demo-180m` (commit) | Chưa tạo |
-| Tag `final-24h` (commit) | Chưa tạo |
+| Tag `demo-180m` (commit) | `demo-180m` → implementation freeze `f0850bf` |
+| Tag `final-24h` (commit) | `final-24h` → annotated final tag (target ghi nhận bằng Git ref) |
 | Deadline (giờ VN) | Đúng hạn (chưa có ngày/giờ cụ thể) |
 
 ## 01 · Problem statement
